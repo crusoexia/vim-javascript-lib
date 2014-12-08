@@ -15,8 +15,10 @@ syntax keyword  jsLibrary           jasmine
 syntax match    jsBBoneAccessExpr   /\./ contained nextgroup=jsBackboneClass
 syntax keyword  jsBackboneClass     Model View Collection Events Router History contained
 
+syntax match    jsJQIdentifier      /\v<\$/
+
 " Add to [vim-javascript](https://github.com/pangloss/vim-javascript) syntax groups.
-syntax cluster  jsExpression        add=jsLibrary
+syntax cluster  jsExpression        add=jsLibrary,jsJQIdentifier
 
 if version >= 508 || !exists("did_javascript_lib_syn_inits")
   if version < 508
@@ -28,6 +30,7 @@ if version >= 508 || !exists("did_javascript_lib_syn_inits")
 
   HiLink jsLibrary              Constant
   HiLink jsBackboneClass        Constant
+  HiLink jsJQIdentifier         Delimiter
 
   delcommand HiLink
 endif
