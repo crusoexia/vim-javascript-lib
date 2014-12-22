@@ -38,7 +38,7 @@ if version >= 508 || !exists("did_javascript_lib_syn_inits")
   HiLink jsLibrary              Constant
   HiLink jsBackboneClass        Constant
   HiLink jsJQDelimiter          Delimiter
-  HiLink jsAMDFunction          Special
+  HiLink jsAMDFunction          Keyword
 
   delcommand HiLink
 endif
