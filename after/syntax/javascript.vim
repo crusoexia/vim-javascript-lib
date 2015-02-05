@@ -24,8 +24,12 @@ syntax match    jsJQDelimiter       /\v<\$/
 syntax keyword  jsAMDFunction       define require
 " }}}
 
+" Testing: {{{
+syntax keyword  jsTesting           describe it before after beforeEach afterEach
+" }}}
+
 " Add to [vim-javascript](https://github.com/pangloss/vim-javascript) syntax groups.
-syntax cluster  jsExpression        add=jsLibrary,jsJQDelimiter,jsAMDFunction
+syntax cluster  jsExpression        add=jsLibrary,jsJQDelimiter,jsAMDFunction,jsTesting
 
 if version >= 508 || !exists("did_javascript_lib_syn_inits")
   if version < 508
@@ -39,6 +43,7 @@ if version >= 508 || !exists("did_javascript_lib_syn_inits")
   HiLink jsBackboneClass        Constant
   HiLink jsJQDelimiter          Delimiter
   HiLink jsAMDFunction          Keyword
+  HiLink jsTesting              Include
 
   delcommand HiLink
 endif
