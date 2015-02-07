@@ -28,6 +28,11 @@ Right now the list is:
 * jasmine
 * AMD
 
+HTML
+----
+
+This plugin will also fix the html attribute highlight issue of original vim.
+
 Screenshots
 -----------
 
