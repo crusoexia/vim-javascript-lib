@@ -25,7 +25,7 @@ syntax keyword  jsAMDFunction       define require
 " }}}
 
 " Testing: {{{
-syntax keyword  jsTesting           describe it before after beforeEach afterEach
+syntax keyword  jsTesting           describe it test before after beforeEach afterEach
 " }}}
 
 " Add to [vim-javascript](https://github.com/pangloss/vim-javascript) syntax groups.
