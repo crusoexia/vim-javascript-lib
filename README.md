@@ -27,6 +27,7 @@ Right now the list is:
 * Handlebars / Mustache
 * jasmine
 * AMD
+* Q
 
 HTML
 ----

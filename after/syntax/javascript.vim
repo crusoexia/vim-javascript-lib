@@ -13,6 +13,7 @@ syntax keyword  jsLibrary           Backbone nextgroup=jsBBoneAccessExpr
 syntax keyword  jsLibrary           angular
 syntax keyword  jsLibrary           Handlebars Mustache
 syntax keyword  jsLibrary           jasmine
+syntax keyword  jsLibrary           Q
 
 syntax match    jsBBoneAccessExpr   /\./ contained nextgroup=jsBackboneClass
 syntax keyword  jsBackboneClass     Model View Collection Events Router History contained
