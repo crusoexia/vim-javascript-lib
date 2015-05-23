@@ -6,7 +6,7 @@
 " Maintainer:   crusoexia
 " URL:          https://github.com/crusoexia/vim-javascript-lib
 
-" 3rd party libraries: {{{
+" Libraries: {{{
 syntax keyword  jsLibrary           _ underscore
 syntax keyword  jsLibrary           jQuery Zepto $
 syntax keyword  jsLibrary           Backbone nextgroup=jsBBoneAccessExpr
@@ -21,8 +21,10 @@ syntax keyword  jsBackboneClass     Model View Collection Events Router History 
 syntax match    jsJQDelimiter       /\v<\$/
 " }}}
 
-" Standards and community: {{{
-syntax keyword  jsAMDFunction       define require
+" Module: {{{
+syntax keyword  jsInclude           require
+syntax keyword  jsDefine            define exports module
+syntax cluster  jsModule            contains=jsInclude,jsDefine
 " }}}
 
 " Testing: {{{
@@ -30,7 +32,7 @@ syntax keyword  jsTesting           describe it test before after beforeEach aft
 " }}}
 
 " Add to [vim-javascript](https://github.com/pangloss/vim-javascript) syntax groups.
-syntax cluster  jsExpression        add=jsLibrary,jsJQDelimiter,jsAMDFunction,jsTesting
+syntax cluster  jsExpression        add=jsLibrary,jsJQDelimiter,@jsModule,jsTesting
 
 if version >= 508 || !exists("did_javascript_lib_syn_inits")
   if version < 508
@@ -40,11 +42,12 @@ if version >= 508 || !exists("did_javascript_lib_syn_inits")
     command -nargs=+ HiLink hi def link <args>
   endif
 
-  HiLink jsLibrary              Constant
-  HiLink jsBackboneClass        Constant
-  HiLink jsJQDelimiter          Delimiter
-  HiLink jsAMDFunction          Keyword
-  HiLink jsTesting              Include
+  HiLink  jsLibrary             Constant
+  HiLink  jsBackboneClass       Constant
+  HiLink  jsJQDelimiter         Delimiter
+  HiLink  jsInclude             Include
+  HiLink  jsDefine              Define
+  HiLink  jsTesting             Statement
 
   delcommand HiLink
 endif
