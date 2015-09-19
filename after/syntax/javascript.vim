@@ -7,12 +7,13 @@
 " URL:          https://github.com/crusoexia/vim-javascript-lib
 
 " 3rd party libraries: {{{
-syntax keyword  jsLibrary           _ underscore
+syntax keyword  jsLibrary           _ underscore lodash
 syntax keyword  jsLibrary           jQuery Zepto $
 syntax keyword  jsLibrary           Backbone nextgroup=jsBBoneAccessExpr
 syntax keyword  jsLibrary           angular
 syntax keyword  jsLibrary           Handlebars Mustache
 syntax keyword  jsLibrary           jasmine
+syntax keyword  jsLibrary           sinon
 
 syntax match    jsBBoneAccessExpr   /\./ contained nextgroup=jsBackboneClass
 syntax keyword  jsBackboneClass     Model View Collection Events Router History contained
