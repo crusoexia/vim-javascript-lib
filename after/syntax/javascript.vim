@@ -35,7 +35,7 @@ syntax cluster  jsModule              contains=jsInclude,jsDefine
 " }}}
 
 " Testing: {{{
-syntax keyword  jsTesting             describe it test before after beforeEach afterEach
+syntax keyword  jsTesting             describe it test before after beforeEach afterEach beforeAll afterAll expect
 " }}}
 
 " Add to [vim-javascript](https://gi  thub.com/pangloss/vim-javascript) syntax groups.
